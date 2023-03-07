@@ -4,6 +4,8 @@ class BooksController < ApplicationController
     @new_book = Book.new
     @books=Book.all
     @user=User.find(current_user.id)
+    @following_users = @user.following_user
+    @follower_users = @user.follower_user
 
   end
 
@@ -31,6 +33,8 @@ class BooksController < ApplicationController
     @book=Book.find(params[:id])
     @user=@book.user
     @book_comment = BookComment.new
+    @following_users = @user.following_user
+    @follower_users = @user.follower_user
   end
 
   def destroy

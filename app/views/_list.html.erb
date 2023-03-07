@@ -7,10 +7,21 @@
           <tr>
             <td><strong>name</strong></td>
             <td><strong><%=user.name %></strong></td>
+           
           </tr>
           <tr>
             <td><strong>introduction</strong></td>
             <td><strong><%=user.introduction %></strong></td>
+          </tr>
+          <tr>
+            <td>follow</td>
+            <td><%= user.following_user.count %></td>
+            
+          </tr>
+          <tr>
+            <td>follower</td>
+            <td><%= user.follower_user.count %></td>
+            
           </tr>
         </tbody>
       </table>
@@ -18,7 +29,7 @@
         <%= link_to edit_user_path(user.id), class:"btn btn-outline-secondary btn-block" do %>
         <i class="fas fa-user-cog"></i>
         <% end %>
-      </div>
+    </div>
     <h3>New book</h3>
       <%= form_with model: new_book do |f| %>
         
@@ -28,3 +39,4 @@
           <%= f.text_area :body %>
         <%= f.submit 'Create Book',class:"btn btn-success" %>
       <% end %>
+   </div>
