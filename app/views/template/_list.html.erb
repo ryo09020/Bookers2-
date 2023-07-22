@@ -33,6 +33,9 @@
     <h3>New book</h3>
       <%= form_with model: new_book do |f| %>
         
+        
+        <h4>Image</h4>
+        <%= f.file_field :image, placeholder: "Book_image", accept: "image/*" %>
         <h4>Title</h4>
           <%= f.text_field :title %>
         <h4>Opinion</h4>

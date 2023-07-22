@@ -2,7 +2,7 @@
   <div>
   <%= flash[:notice] %>
   </div>
-  <%= render '/list', user: @user ,new_book: @new_book %>
+  <%= render 'template/list', user: @user ,new_book: @new_book %>
     <!-- ユーザーの投稿一覧 -->
 
   
@@ -26,7 +26,7 @@
                             <td>
                               <div>
                                 <%= link_to book_path(@book.id) do %>
-                                  <%= image_tag @user.get_profile_image(90,90) %>
+                                  <%= image_tag @book.get_image(90,90) %>
                                 <% end %>
                               </div>
                               <%= link_to user_path(@user.id) do %>
