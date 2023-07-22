@@ -2,15 +2,12 @@
   <div class="row">
     <div class="col">
       <h1>Editing Book</h1>
-      <% if @book.errors.any? %>
-        <%= @book.errors.count %>errors prohibited this obj from being saved:
-        <ul>
-          <% @book.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
+      <% render "template/error_mess", record: @book%>
         </ul>
         <% end %>
       <%= form_with model: @book do |f| %>
+        <h4>Image</h4>
+        <%= f.file_field :image, placeholder: "Book_image", accept: "image/*" %>
       
         <h4>Title</h4>
         <%= f.text_field :title ,class:"form-control input-lg"%>

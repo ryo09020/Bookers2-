@@ -15,7 +15,7 @@ class User < ApplicationRecord
   has_many :following_user, through: :follower, source: :followed # 自分がフォローしている人
   has_many :follower_user, through: :followed, source: :follower # 自分をフォローしている人
   
-     has_one_attached :profile_image
+    has_one_attached :profile_image
      
    validates :name, uniqueness: true, length: { minimum: 2, maximum: 20 }
    validates :introduction, length: { maximum: 50 }
